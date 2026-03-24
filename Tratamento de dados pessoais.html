@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacidade de Dados Pessoais - ANAC</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Montserrat',sans-serif; background:#f0f0f0; display:flex; justify-content:center; padding:20px; }
+  .poster { background:#f5f5f0; width:794px; padding:40px 50px 50px; position:relative; overflow:hidden; }
+
+  /* HEADER */
+  .header { display:flex; align-items:center; gap:20px; margin-bottom:10px; }
+  .lock-icon { width:90px; height:90px; object-fit:contain; }
+  .header-title { color:#2d2d7a; font-size:42px; font-weight:900; line-height:1.1; text-transform:uppercase; }
+
+  /* SUBTITLE */
+  .subtitle { text-align:center; color:#2d2d7a; font-size:15px; font-weight:800; text-transform:uppercase; margin:16px 0 4px; line-height:1.4; }
+  .subtitle-highlight { text-align:center; color:#2d2d7a; font-size:16px; font-weight:900; font-style:italic; margin-bottom:24px; }
+
+  /* DIVIDER */
+  .divider { height:3px; background:linear-gradient(to right,#2d2d7a,#5b5bcc,#2d2d7a); margin-bottom:28px; }
+
+  /* GRID */
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:0; }
+  .row { display:contents; }
+
+  /* CARD */
+  .card { padding:14px 18px 16px; position:relative; display:flex; flex-direction:column; gap:6px; }
+  .card.left { border-right:2px solid #ddd; }
+  .card-border-bottom { border-bottom:2px solid #ddd; }
+
+  .card-header { display:flex; align-items:center; gap:10px; }
+  .card-icon { font-size:30px; flex-shrink:0; }
+  .card-title { color:#c8960a; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; line-height:1.3; }
+  .card-title.right-title { color:#2d2d7a; }
+
+  .card-text { font-size:11.5px; color:#333; line-height:1.6; margin-top:2px; }
+
+  /* INCIDENT FULL WIDTH */
+  .full-width { grid-column:1/-1; background:#2d2d7a; padding:16px 22px; display:flex; align-items:center; gap:16px; margin-top:4px; }
+  .full-width .card-title { color:#f5c518; font-size:13px; }
+  .full-width .card-text { color:#fff; font-size:12px; }
+  .full-width .card-icon { font-size:34px; }
+
+  /* FOOTER */
+  .footer { margin-top:28px; display:flex; justify-content:space-between; align-items:center; border-top:3px solid #2d2d7a; padding-top:16px; }
+  .footer-email { font-size:11px; color:#2d2d7a; font-weight:600; }
+  .footer-logo { font-size:13px; font-weight:900; color:#2d2d7a; text-align:right; }
+  .footer-logo span { color:#c8960a; }
+  .hashtag { font-size:13px; color:#2d2d7a; font-weight:800; }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <!-- HEADER -->
+  <div class="header">
+    <img class="lock-icon" src="https://www.anac.gov.br/@@site-logo/logo-anac.png" alt="Logo ANAC">
+    <div class="header-title">Privacidade de<br>Dados Pessoais</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- GRID -->
+  <div class="grid">
+
+    <!-- ROW 1 -->
+    <div class="card left card-border-bottom">
+      <div class="card-header">
+        <div class="card-icon">📋</div>
+        <div class="card-title">Coleta de Dados</div>
+      </div>
+      <div class="card-text">Colete apenas informações realmente necessárias para nossas atividades e, sempre que possível, priorize o uso de informações anonimizadas (ex.: CPF XXX.013.123-XX) ou agregadas.</div>
+    </div>
+
+    <div class="card card-border-bottom">
+      <div class="card-header">
+        <div class="card-icon">⚖️</div>
+        <div class="card-title right-title">Quando Podemos Coletar?</div>
+      </div>
+      <div class="card-text">Principalmente para cumprir obrigações legais e regulatórias: fiscalização, certificação, normatização, prestação de serviços, gestão de contratos, relacionamento com a sociedade e gestão de pessoas.</div>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="card left card-border-bottom">
+      <div class="card-header">
+        <div class="card-icon">🔄</div>
+        <div class="card-title">Tratamento</div>
+      </div>
+      <div class="card-text">O tratamento pode envolver diversas etapas. Atenção: a simples visualização já nos torna responsáveis pela proteção dos dados pessoais coletados.</div>
+    </div>
+
+    <div class="card card-border-bottom">
+      <div class="card-header">
+        <div class="card-icon">🗄️</div>
+        <div class="card-title right-title">Armazenamento</div>
+      </div>
+      <div class="card-text">Armazene os dados, preferencialmente, em bancos de dados homologados pela ANAC. Evite guardar dados pessoais em planilhas, e-mails ou meios físicos.</div>
+    </div>
+
+    <!-- ROW 3 -->
+    <div class="card left card-border-bottom">
+      <div class="card-header">
+        <div class="card-icon">🔴</div>
+        <div class="card-title">Dados Sensíveis</div>
+      </div>
+      <div class="card-text">Atenção redobrada com dados sensíveis, ou seja, aqueles que possam causar qualquer tipo de discriminação aos seus titulares.</div>
+    </div>
+
+    <div class="card card-border-bottom">
+      <div class="card-header">
+        <div class="card-icon">👦</div>
+        <div class="card-title right-title">Dados de Crianças e Adolescentes</div>
+      </div>
+      <div class="card-text">A coleta de dados de crianças e adolescentes deve ser precedida de consentimento dos pais ou responsáveis e utilizada prioritariamente para fins educacionais, culturais e para a garantia de direitos.</div>
+    </div>
+
+    <!-- ROW 4 -->
+    <div class="card left card-border-bottom">
+      <div class="card-header">
+        <div class="card-icon">🤝</div>
+        <div class="card-title">Compartilhamento</div>
+      </div>
+      <div class="card-text">Somente com instituições que ofereçam o mesmo grau de segurança da ANAC e com aprovação formal pela Agência. Compartilhe apenas o estritamente necessário conforme o objeto estabelecido.</div>
+    </div>
+
+    <div class="card card-border-bottom">
+      <div class="card-header">
+        <div class="card-icon">🔍</div>
+        <div class="card-title right-title">Transparência</div>
+      </div>
+      <div class="card-text">O tratamento de dados pessoais deve ser transparente aos titulares em todas as etapas. É um direito assegurado pela LGPD.</div>
+    </div>
+
+    <!-- INCIDENTE - FULL WIDTH -->
+    <div class="full-width">
+      <div class="card-icon">🚨</div>
+      <div>
+        <div class="card-title">Incidentes</div>
+        <div class="card-text">Qualquer incidente deve ser comunicado às unidades competentes na ANAC pelo e-mail: <strong>encarregado.lgpd@anac.gov.br</strong></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="hashtag">#PROTEJA</div>
+    <div class="footer-email" style="text-align:center;"><a href="https://www.gov.br/anac/pt-br/acesso-a-informacao/seguranca-da-informacao/tratamento-de-dados-pessoais/aviso-de-privacidade" target="_blank" style="color:#2d2d7a;font-weight:700;">Política de Privacidade da ANAC</a></div>
+    <div class="footer-logo"><span>ANAC</span><br>Agência Nacional de<br>Aviação Civil</div>
+  </div>
+
+</div>
+</body>
+</html>

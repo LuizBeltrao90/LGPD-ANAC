@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cards ANAC – Checklist de Segurança</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a2e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 40px;
+    font-family: 'Barlow', sans-serif;
+  }
+
+  /* ── CARD BASE ─────────────────────────────────────── */
+  .card {
+    width: 800px;
+    min-height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  }
+
+  /* ── TOP BAR ───────────────────────────────────────── */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px;
+    z-index: 2;
+  }
+
+  .topbar .brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .topbar .hashtag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.12);
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    text-transform: uppercase;
+  }
+
+  /* ── BODY ──────────────────────────────────────────── */
+  .card-body {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    z-index: 2;
+  }
+
+  .left-col {
+    flex: 0 0 320px;
+    padding: 28px 32px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-number {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 1;
+    opacity: 0.12;
+    position: absolute;
+    bottom: 16px;
+    left: 24px;
+    color: #fff;
+    user-select: none;
+  }
+
+  .icon-wrap {
+    width: 62px;
+    height: 62px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 18px;
+    flex-shrink: 0;
+  }
+
+  .card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 1.05;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .card-subtitle {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+  }
+
+  .divider {
+    width: 1px;
+    background: rgba(255,255,255,0.12);
+    margin: 20px 0;
+    flex-shrink: 0;
+  }
+
+  .right-col {
+    flex: 1;
+    padding: 28px 36px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .tips-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 4px;
+  }
+
+  .tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .tip-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .tip-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.88);
+  }
+
+  .tip-text strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* ── BOTTOM BAR ────────────────────────────────────── */
+  .bottombar {
+    padding: 14px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    z-index: 2;
+  }
+
+  .slogan {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.5px;
+  }
+
+  .campanha-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ── CORES DOS CARDS ────────────────────────────────── */
+  #card1 { background: linear-gradient(135deg, #0a2a6e 0%, #0d3b9e 40%, #1a4fbb 100%); }
+  #card1::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 20%, rgba(255,100,50,0.18) 0%, transparent 55%), radial-gradient(ellipse at 10% 90%, rgba(0,200,255,0.1) 0%, transparent 50%); z-index: 1; }
+  #card1 .topbar { background: rgba(0,0,0,0.2); }
+  #card1 .icon-wrap { background: rgba(255,100,50,0.2); border: 1px solid rgba(255,100,50,0.4); }
+  #card1 .tip-dot { background: rgba(255,100,50,0.8); }
+  #card1 .bottombar { background: rgba(0,0,0,0.2); }
+
+  #card2 { background: linear-gradient(135deg, #0d4f3c 0%, #0f6e52 40%, #128060 100%); }
+  #card2::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 85% 15%, rgba(0,255,180,0.15) 0%, transparent 50%), radial-gradient(ellipse at 5% 85%, rgba(255,220,0,0.08) 0%, transparent 50%); z-index: 1; }
+  #card2 .topbar { background: rgba(0,0,0,0.2); }
+  #card2 .icon-wrap { background: rgba(0,255,160,0.15); border: 1px solid rgba(0,255,160,0.3); }
+  #card2 .tip-dot { background: rgba(0,200,120,0.85); }
+  #card2 .bottombar { background: rgba(0,0,0,0.2); }
+
+  #card3 { background: linear-gradient(135deg, #4a1060 0%, #6b1a8a 40%, #7d20a0 100%); }
+  #card3::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 20%, rgba(255,80,200,0.15) 0%, transparent 50%), radial-gradient(ellipse at 10% 80%, rgba(80,0,255,0.12) 0%, transparent 50%); z-index: 1; }
+  #card3 .topbar { background: rgba(0,0,0,0.2); }
+  #card3 .icon-wrap { background: rgba(255,80,200,0.15); border: 1px solid rgba(255,80,200,0.3); }
+  #card3 .tip-dot { background: rgba(200,60,180,0.85); }
+  #card3 .bottombar { background: rgba(0,0,0,0.2); }
+
+  #card4 { background: linear-gradient(135deg, #1a3a5c 0%, #1e4f80 40%, #1c5a96 100%); }
+  #card4::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 15%, rgba(80,200,255,0.18) 0%, transparent 50%), radial-gradient(ellipse at 8% 85%, rgba(0,100,255,0.12) 0%, transparent 50%); z-index: 1; }
+  #card4 .topbar { background: rgba(0,0,0,0.2); }
+  #card4 .icon-wrap { background: rgba(80,200,255,0.15); border: 1px solid rgba(80,200,255,0.3); }
+  #card4 .tip-dot { background: rgba(30,160,220,0.9); }
+  #card4 .bottombar { background: rgba(0,0,0,0.2); }
+</style>
+</head>
+<body>
+
+<div class="card" id="card1">
+  <div class="topbar">
+    <span class="brand">Checklist de Segurança</span>
+    <span class="hashtag">#Proteja</span>
+  </div>
+  <div class="card-body">
+    <div class="left-col">
+      <div>
+        <div class="icon-wrap">🎣</div>
+        <div class="card-title">Phishing<br>& E-mail<br>Seguro</div>
+        <div class="card-subtitle">Identifique tentativas de golpe antes de clicar.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="right-col">
+      <div class="tips-heading">✈ Checklist do Colaborador</div>
+      <div class="tip-item"><div class="tip-dot">1</div><div class="tip-text"><strong>Verifique o remetente:</strong> e-mails legítimos nunca pedem senha por mensagem.</div></div>
+      <div class="tip-item"><div class="tip-dot">2</div><div class="tip-text"><strong>Passe o mouse sobre links</strong> para ver o endereço real na barra de status.</div></div>
+      <div class="tip-item"><div class="tip-dot">3</div><div class="tip-text"><strong>Desconfie de urgência:</strong> ameaças de bloqueio são sinais de phishing.</div></div>
+      <div class="tip-item"><div class="tip-dot">4</div><div class="tip-text"><strong>Dúvida? Não clique.</strong> Encaminhe para a equipe de TI da ANAC.</div></div>
+    </div>
+    <div class="card-number">01</div>
+  </div>
+  <div class="bottombar">
+    <span class="slogan">"Não morda a isca!"</span>
+    <span class="campanha-badge">Campanha 2026</span>
+  </div>
+</div>
+
+<div class="card" id="card2">
+  <div class="topbar">
+    <span class="brand">Checklist de Segurança</span>
+    <span class="hashtag">#Proteja</span>
+  </div>
+  <div class="card-body">
+    <div class="left-col">
+      <div>
+        <div class="icon-wrap">🔐</div>
+        <div class="card-title">Senhas &<br>Autenti-<br>cação</div>
+        <div class="card-subtitle">Sua senha é a primeira barreira. Faça ela valer.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="right-col">
+      <div class="tips-heading">✈ Checklist do Colaborador</div>
+      <div class="tip-item"><div class="tip-dot">1</div><div class="tip-text"><strong>Senha forte = 12+ caracteres</strong> com letras, números e símbolos.</div></div>
+      <div class="tip-item"><div class="tip-dot">2</div><div class="tip-text"><strong>Nunca reutilize senhas</strong> entre sistemas pessoais e institucionais.</div></div>
+      <div class="tip-item"><div class="tip-dot">3</div><div class="tip-text"><strong>Ative o 2FA</strong> sempre que disponível. É a segunda trava da sua conta.</div></div>
+      <div class="tip-item"><div class="tip-dot">4</div><div class="tip-text"><strong>Use um gerenciador de senhas</strong> para armazenar credenciais com segurança.</div></div>
+    </div>
+    <div class="card-number">02</div>
+  </div>
+  <div class="bottombar">
+    <span class="slogan">"Sua senha é sua primeira linha de defesa."</span>
+    <span class="campanha-badge">Campanha 2026</span>
+  </div>
+</div>
+
+<div class="card" id="card3">
+  <div class="topbar">
+    <span class="brand">Checklist de Segurança</span>
+    <span class="hashtag">#Proteja</span>
+  </div>
+  <div class="card-body">
+    <div class="left-col">
+      <div>
+        <div class="icon-wrap">🎭</div>
+        <div class="card-title">Enge-<br>nharia<br>Social</div>
+        <div class="card-subtitle">O maior risco digital tem rosto humano. Saiba reconhecê-lo.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="right-col">
+      <div class="tips-heading">✈ Checklist do Colaborador</div>
+      <div class="tip-item"><div class="tip-dot">1</div><div class="tip-text"><strong>Confirme identidades</strong> antes de compartilhar qualquer informação sensível.</div></div>
+      <div class="tip-item"><div class="tip-dot">2</div><div class="tip-text"><strong>Desconfie de pedidos urgentes</strong>, mesmo que pareçam vir de colegas.</div></div>
+      <div class="tip-item"><div class="tip-dot">3</div><div class="tip-text"><strong>Golpes com IA de voz existem.</strong> Em caso de dúvida, confirme pessoalmente.</div></div>
+      <div class="tip-item"><div class="tip-dot">4</div><div class="tip-text"><strong>Nunca forneça credenciais por telefone</strong> para supostos suportes de TI.</div></div>
+    </div>
+    <div class="card-number">03</div>
+  </div>
+  <div class="bottombar">
+    <span class="slogan">"Desconfie, verifique, proteja."</span>
+    <span class="campanha-badge">Campanha 2026</span>
+  </div>
+</div>
+
+<div class="card" id="card4">
+  <div class="topbar">
+    <span class="brand">Checklist de Segurança</span>
+    <span class="hashtag">#Proteja</span>
+  </div>
+  <div class="card-body">
+    <div class="left-col">
+      <div>
+        <div class="icon-wrap">📡</div>
+        <div class="card-title">Disposi-<br>tivos &<br>Redes</div>
+        <div class="card-subtitle">De onde você trabalha também importa para a segurança.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="right-col">
+      <div class="tips-heading">✈ Checklist do Colaborador</div>
+      <div class="tip-item"><div class="tip-dot">1</div><div class="tip-text"><strong>Evite Wi-Fi público</strong> para acessar sistemas. Use a VPN institucional.</div></div>
+      <div class="tip-item"><div class="tip-dot">2</div><div class="tip-text"><strong>Bloqueie a tela</strong> sempre que se afastar do seu posto de trabalho.</div></div>
+      <div class="tip-item"><div class="tip-dot">3</div><div class="tip-text"><strong>Mesa limpa:</strong> não deixe senhas anotadas em papéis ou monitores.</div></div>
+      <div class="tip-item"><div class="tip-dot">4</div><div class="tip-text"><strong>Atualize o sistema:</strong> correções de segurança são vitais para a agência.</div></div>
+    </div>
+    <div class="card-number">04</div>
+  </div>
+  <div class="bottombar">
+    <span class="slogan">"Em qualquer lugar, segurança em primeiro lugar."</span>
+    <span class="campanha-badge">Campanha 2026</span>
+  </div>
+</div>
+
+</body>
+</html>

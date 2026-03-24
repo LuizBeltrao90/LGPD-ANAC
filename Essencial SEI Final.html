@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essencial SEI - Guia de Classificação</title>
+    <link href=https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&display=swap rel="stylesheet">
+    <style>
+        :root {
+            --blue-bg: linear-gradient(135deg, #1a3a5a 0%, #204d7d 100%);
+            --green-bg: linear-gradient(135deg, #0d4f3c 0%, #128060 100%);
+            --white: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #121212;
+            font-family: 'Barlow', sans-serif;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            gap: 40px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Estilo Base do Card */
+        .card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            min-height: 400px;
+        }
+
+        .blue-card { background: var(--blue-bg); }
+        .green-card { background: var(--green-bg); }
+
+        /* Topo e Rodapé */
+        .header, .footer {
+            padding: 15px 30px;
+            background: rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .footer { border-top: 1px solid rgba(255,255,255,0.1); font-style: italic; }
+
+        /* Conteúdo Principal */
+        .content {
+            display: flex;
+            flex: 1;
+            padding: 30px;
+            gap: 30px;
+        }
+
+        .left-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid rgba(255,255,255,0.15);
+            padding-right: 30px;
+        }
+
+        .right-side {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 42px;
+            line-height: 1;
+            margin: 15px 0;
+            text-transform: uppercase;
+        }
+
+        .subtitle { font-size: 14px; opacity: 0.9; line-height: 1.4; }
+
+        .checklist-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        /* Itens do Checklist */
+        .item { display: flex; align-items: flex-start; gap: 12px; }
+
+        .number {
+            width: 24px;
+            height: 24px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .blue-card .number { background: #e63946; } /* Destaque da Imagem 1 */
+        .green-card .number { background: #00c878; }
+
+        .text { font-size: 14px; line-height: 1.5; }
+
+        @media (max-width: 768px) {
+            .content { flex-direction: column; }
+            .left-side { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 20px; padding-right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card blue-card">
+        <div class="header">
+            <span>Essencial SEI</span>
+            <span style="background: rgba(255,255,255,0.1); padding: 2px 10px; border-radius: 10px;">#Proteja</span>
+        </div>
+        <div class="content">
+            <div class="left-side">
+                <div style="font-size: 40px;">📄🔒</div>
+                <h1 class="title">Classificação<br>da Informação</h1>
+                <p class="subtitle">A adequada classificação dos documentos no SEI é um dever funcional de todos.</p>
+            </div>
+            <div class="right-side">
+                <div class="checklist-title">✈ Checklist de Informação</div>
+                <div class="item">
+                    <div class="number">1</div>
+                    <div class="text"><strong>Avalie se há</strong> dados pessoais ou sensíveis no documento.</div>
+                </div>
+                <div class="item">
+                    <div class="number">2</div>
+                    <div class="text"><strong>Defina o nível:</strong> público, restrito (por unidade) ou sigiloso (por usuário).</div>
+                </div>
+                <div class="item">
+                    <div class="number">3</div>
+                    <div class="text"><strong>Classifique</strong> documento por documento, não o processo inteiro.</div>
+                </div>
+                <div class="item">
+                    <div class="number">4</div>
+                    <div class="text"><strong>Registre</strong> sempre a base legal da restrição.</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>A classificação correta protege pessoas e a instituição.</span>
+            <span>CAMPANHA 2026</span>
+        </div>
+    </div>
+
+    <div class="card green-card">
+        <div class="header">
+            <span>Essencial SEI</span>
+            <span style="background: rgba(255,255,255,0.1); padding: 2px 10px; border-radius: 10px;">#Proteja</span>
+        </div>
+        <div class="content">
+            <div class="left-side">
+                <div style="font-size: 40px;"> 🔐 </div>
+                <h1 class="title">Informações<br>Sigilosas<br>da LAI</h1>
+                <p class="subtitle">Deverá ser tratada como informação classificada que exigirá:</p>
+            </div>
+            <div class="right-side">
+                <div class="checklist-title">✈ Checklist de Tratamento</div>
+                <div class="item"><div class="number">1</div><div class="text">Classificação formal com grau de sigilo (reservado ou secreto).</div></div>
+                <div class="item"><div class="number">2</div><div class="text">Preenchimento do Termo de Classificação de Informação - TCI.</div></div>
+                <div class="item"><div class="number">3</div><div class="text">Armazenamento exclusivo em formato físico, com controle de acesso.</div></div>
+                <div class="item"><div class="number">4</div><div class="text">Manuseio restrito a pessoas autorizadas pela segurança institucional.</div></div>
+                <div class="item"><div class="number">5</div><div class="text">Consulte o Manual de Informações Classificadas da ANAC.</div></div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>"Sigilo com responsabilidade: um dever de todos."</span>
+            <span>CAMPANHA 2026</span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

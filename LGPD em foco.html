@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campanha LGPD em Foco - ANAC</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #10101a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px; /* Espaço entre os cards */
+    padding: 60px 20px;
+    font-family: 'Barlow', sans-serif;
+  }
+
+  /* ── CARD BASE ─────────────────────────────────────── */
+  .card {
+    width: 800px;
+    min-height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* ── TOP BAR ───────────────────────────────────────── */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 30px;
+    z-index: 10;
+    background: rgba(0,0,0,0.2);
+  }
+
+  .brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .hashtag-pill {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.1);
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    text-transform: uppercase;
+  }
+
+  /* ── BODY LAYOUT ───────────────────────────────────── */
+  .card-body {
+    display: flex;
+    flex: 1;
+    position: relative;
+    z-index: 5;
+    padding: 30px 0 20px 0;
+  }
+
+  .left-col {
+    flex: 1.1;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+  }
+
+  .divider {
+    width: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 20px 0;
+    flex-shrink: 0;
+  }
+
+  .right-col {
+    flex: 1.3;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.0;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+
+  .card-subtitle {
+    font-size: 14px;
+    line-height: 1.45;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    max-width: 280px;
+  }
+
+  .tips-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 8px;
+  }
+
+  .tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .tip-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .tip-text {
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.95);
+  }
+
+  .tip-text strong { font-weight: 700; color: #fff; }
+
+  .bottombar {
+    padding: 14px 30px;
+    z-index: 10;
+    background: rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .slogan {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    font-style: italic;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+
+  .anac-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 1px;
+  }
+
+  .card-number {
+    position: absolute;
+    bottom: -15px;
+    right: 25px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 110px;
+    pointer-events: none;
+    line-height: 1;
+    z-index: 1;
+  }
+
+  /* ── VARIANTES DE CORES ────────────────────────────── */
+
+  /* CARD 05 - AZUL */
+  .card-05 { background: linear-gradient(135deg, #0a2d3d 0%, #104861 40%, #1a7fa8 100%); }
+  .card-05::before { background: radial-gradient(ellipse at 85% 15%, rgba(100,210,255,0.15) 0%, transparent 60%); }
+  .card-05 .icon-wrap { background: rgba(30,190,240,0.15); border: 1px solid rgba(30,190,240,0.3); }
+  .card-05 .tip-dot { background: rgba(30,190,240,0.85); box-shadow: 0 4px 10px rgba(30,190,240,0.3); }
+  .card-05 .card-number { color: rgba(100,210,255,0.035); }
+
+  /* CARD 06 - ROXO */
+  .card-06 { background: linear-gradient(135deg, #2e1a47 0%, #4a2b73 40%, #7c3aed 100%); }
+  .card-06::before { background: radial-gradient(ellipse at 85% 15%, rgba(167,139,250,0.15) 0%, transparent 60%); }
+  .card-06 .icon-wrap { background: rgba(167,139,250,0.15); border: 1px solid rgba(167,139,250,0.3); }
+  .card-06 .tip-dot { background: rgba(124,58,237,0.85); box-shadow: 0 4px 10px rgba(124,58,237,0.3); }
+  .card-06 .card-number { color: rgba(167,139,250,0.035); }
+
+  /* CARD 07 - DOURADO */
+  .card-07 { background: linear-gradient(135deg, #3d2b0a 0%, #614510 40%, #d97706 100%); }
+  .card-07::before { background: radial-gradient(ellipse at 85% 15%, rgba(251,191,36,0.15) 0%, transparent 60%); }
+  .card-07 .icon-wrap { background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)); font-size: 34px; }
+  .card-07 .tip-dot { background: #fbbf24; color: #3d2b0a; box-shadow: 0 4px 10px rgba(251,191,36,0.3); }
+  .card-07 .card-number { color: rgba(255,255,255,0.04); }
+
+  /* CARD 08 - VERMELHO */
+  .card-08 { background: linear-gradient(135deg, #4d1010 0%, #7d1a1a 40%, #c14d2a 100%); }
+  .card-08::before { background: radial-gradient(ellipse at 85% 15%, rgba(255,160,122,0.15) 0%, transparent 60%); }
+  .card-08 .icon-wrap { background: rgba(255,160,122,0.15); border: 1px solid rgba(255,160,122,0.3); filter: drop-shadow(0 0 8px rgba(255,160,122,0.6)); }
+  .card-08 .tip-dot { background: rgba(255,160,122,0.85); box-shadow: 0 4px 10px rgba(255,160,122,0.3); }
+  .card-08 .card-number { color: rgba(255,160,122,0.035); }
+
+</style>
+</head>
+<body>
+
+  <div class="card card-05">
+    <div class="topbar"><div class="brand">LGPD em foco</div><div class="hashtag-pill">#PROTEJA</div></div>
+    <div class="card-body">
+      <div class="left-col">
+        <div class="icon-wrap">⚖️</div>
+        <div class="card-title">LGPD<br>na<br>Prática</div>
+        <div class="card-subtitle">Proteger dados é uma responsabilidade legal e ética de todo servidor.</div>
+      </div>
+      <div class="divider"></div>
+      <div class="right-col">
+        <div class="tips-heading">✈ Checklist do Servidor</div>
+        <div class="tip-item"><div class="tip-dot">1</div><div class="tip-text"><strong>Você é agente de tratamento:</strong> ao acessar dados de cidadãos, você tem responsabilidade legal.</div></div>
+        <div class="tip-item"><div class="tip-dot">2</div><div class="tip-text"><strong>Compartilhe só o necessário:</strong> dados pessoais não devem circular além do que a atividade exige.</div></div>
+        <div class="tip-item"><div class="tip-dot">3</div><div class="tip-text"><strong>Incidente? Comunique</strong> à equipe responsável pela LGPD na ANAC: cgdin@anac.gov.br.</div></div>
+        <div class="tip-item"><div class="tip-dot">4</div><div class="tip-text"><strong>Sigilo é permanente:</strong> a obrigação de proteger dados continua mesmo após o fim do vínculo.</div></div>
+      </div>
+      <div class="card-number">05</div>
+    </div>
+    <div class="bottombar"><span class="slogan">"Proteger dados é proteger pessoas."</span><span class="anac-badge">ANAC</span></div>
+  </div>
+
+  <div class="card card-06">
+    <div class="topbar"><div class="brand">LGPD em foco</div><div class="hashtag-pill">#PROTEJA</div></div>
+    <div class="card-body">
+      <div class="left-col">
+        <div class="icon-wrap">📋</div>
+        <div class="card-title">Coleta<br>Consciente</div>
+        <div class="card-subtitle">Este card foca em evitar que o servidor peça dados excessivos em formulários ou processos.</div>
+      </div>
+      <div class="divider"></div>
+      <div class="right-col">
+        <div class="tips-heading">✈ Checklist da Coleta</div>
+        <div class="tip-item"><div class="tip-dot">1</div><div class="tip-text"><strong>Menos é mais:</strong> Questione se todos os dados solicitados são realmente essenciais para o serviço.</div></div>
+        <div class="tip-item"><div class="tip-dot">2</div><div class="tip-text"><strong>Finalidade clara:</strong> O cidadão deve saber exatamente para que o dado está sendo usado.</div></div>
+        <div class="tip-item"><div class="tip-dot">3</div><div class="tip-text"><strong>Dados sensíveis:</strong> Redobre o cuidado com saúde, biometria ou origem racial; eles exigem proteção extra.</div></div>
+        <div class="tip-item"><div class="tip-dot">4</div><div class="tip-text"><strong>Exclusão:</strong> Se o dado não tem mais utilidade legal ou administrativa, ele não deve ser guardado.</div></div>
+      </div>
+      <div class="card-number">06</div>
+    </div>
+    <div class="bottombar"><span class="slogan">"Proteger dados é proteger pessoas."</span><span class="anac-badge">ANAC</span></div>
+  </div>
+
+  <div class="card card-07">
+    <div class="topbar"><div class="brand">LGPD em foco</div><div class="hashtag-pill">#PROTEJA</div></div>
+    <div class="card-body">
+      <div class="left-col">
+        <div class="icon-wrap">🪪</div>
+        <div class="card-title">Direitos<br>do Titular</div>
+        <div class="card-subtitle">Focado em como responder quando um cidadão questiona sobre seus dados.</div>
+      </div>
+      <div class="divider"></div>
+      <div class="right-col">
+        <div class="tips-heading">✈ Checklist do Atendimento</div>
+        <div class="tip-item"><div class="tip-dot">1</div><div class="tip-text"><strong>Acesso e Confirmação:</strong> O cidadão tem o direito de saber se a ANAC possui dados dele e quais são.</div></div>
+        <div class="tip-item"><div class="tip-dot">2</div><div class="tip-text"><strong>Correção:</strong> Se um dado estiver errado, a retificação deve ser feita prontamente.</div></div>
+        <div class="tip-item"><div class="tip-dot">3</div><div class="tip-text"><strong>Transparência:</strong> Explique de forma simples como a Agência protege as informações dele.</div></div>
+        <div class="tip-item"><div class="tip-dot">4</div><div class="tip-text"><strong>Canal Oficial:</strong> Encaminhe solicitações complexas para: <strong>encarregado.lgpd@anac.gov.br</strong></div></div>
+      </div>
+      <div class="card-number">07</div>
+    </div>
+    <div class="bottombar"><span class="slogan">"Proteger dados é proteger pessoas."</span><span class="anac-badge">ANAC</span></div>
+  </div>
+
+  <div class="card card-08">
+    <div class="topbar"><div class="brand">LGPD em foco</div><div class="hashtag-pill">#PROTEJA</div></div>
+    <div class="card-body">
+      <div class="left-col">
+        <div class="icon-wrap">🗑️</div>
+        <div class="card-title">Descarte<br>Seguro</div>
+        <div class="card-subtitle">Muitas vezes esquecemos que o papel impresso também é alvo da LGPD.</div>
+      </div>
+      <div class="divider"></div>
+      <div class="right-col">
+        <div class="tips-heading">✈ Checklist do Descarte</div>
+        <div class="tip-item"><div class="tip-dot">1</div><div class="tip-text"><strong>Papel não é lixo comum:</strong> Documentos com nomes, CPFs ou endereços devem ser triturados.</div></div>
+        <div class="tip-item"><div class="tip-dot">2</div><div class="tip-text"><strong>Limpeza Digital:</strong> Verifique periodicamente sua pasta "Downloads" e limpe arquivos temporários com dados pessoais.</div></div>
+        <div class="tip-item"><div class="tip-dot">3</div><div class="tip-text"><strong>Mídias Antigas:</strong> Pendrives ou CDs antigos devem ser destruídos fisicamente ou formatados com segurança.</div></div>
+        <div class="tip-item"><div class="tip-dot">4</div><div class="tip-text"><strong>Memória de Impressora:</strong> Não deixe documentos esquecidos na bandeja da impressora compartilhada.</div></div>
+      </div>
+      <div class="card-number">08</div>
+    </div>
+    <div class="bottombar"><span class="slogan">"Sua responsabilidade com os dados termina apenas após o descarte seguro."</span><span class="anac-badge">ANAC</span></div>
+  </div>
+
+</body>
+</html>

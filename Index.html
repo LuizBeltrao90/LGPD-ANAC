@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campanha Nacional de Proteção de Dados - ANAC</title>
+    <style>
+        /* RESET BÁSICO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER E NAVEGAÇÃO */
+        header {
+            background-color: #004a80; /* Azul Corporativo ANAC */
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a:hover {
+            color: #d1e8ff;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background-color: #fff;
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .hero h1 {
+            color: #004a80;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* CONTEÚDO PRINCIPAL (GRIDS) */
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        /* ESTILO DOS CARDS */
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            background-color: #006bba; /* Azul Mais Claro */
+            color: white;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-body h3 {
+            font-size: 1.3rem;
+            color: #004a80;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-body p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-body ul {
+            list-style: none;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .card-body li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-body li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #006bba;
+            font-weight: bold;
+        }
+
+        .card-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid #eee;
+            text-align: right;
+        }
+
+        /* BOTÃO PROFISSIONAL */
+        .btn-view {
+            display: inline-block;
+            background-color: #004a80;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-view:hover {
+            background-color: #006bba;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #e0e0e0;
+            color: #555;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header .container { flex-direction: column; gap: 1rem; text-align: center; }
+            .nav-links { font-size: 0.9rem; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo-area">ANAC | Campanha de Proteção de Dados</div>
+            <ul class="nav-links">
+                <li><a href="#conhecimento">LGPD</a></li>
+                <li><a href="#seguranca">SEI</a></li>
+                <li><a href="#documentos">Briefings</a></li>                
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Segurança da Informação e LGPD</h1>
+            <p>Guia centralizado para disseminar as melhores práticas em proteção de dados pessoais na ANAC, em conformidade com a Lei nº 13.709/2018 - LGPD.</p>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container grid-container">
+
+            <div class="card" id="conhecimento">
+                <div class="card-header">A LGPD na ANAC</div>
+                <div class="card-body">
+                    <h3>Conformidade Legal</h3>
+                    <p>Entenda o papel da LGPD em nossas atividades essenciais e como protegemos os dados na Agência.</p>
+                    <ul>
+   			 <li><a href="LGPD na ANAC.html" style="color: #006bba; text-decoration: underline;">LGPD 			em resumo</a></li>
+    			<li><a href="Tratamento de dados pessoais.html" style="color: #006bba; text-decoration: 			underline;">Tratamento 	de dados pessoais</a></li>	
+		</ul>
+                </div>
+                <div class="card-footer">
+                    <a href="pilulas_conhecimento.html" target="_blank" class="btn-view">Acessar Página</a>
+                </div>
+            </div>
+
+            <div class="card" id="seguranca">
+                <div class="card-header">Boas práticas no SEI</div>
+                <div class="card-body">
+                    <h3>Segurança na Prática</h3>
+                    <p>Foco nas melhores práticas cotidianas para proteger os dados sob nossa responsabilidade.</p>
+                    <ul>
+			<li><a href="Proteçao de dados no SEI.html" style="color: #006bba; text-decoration: 				underline;">Proteção de dados pessoais no SEI</a></li>  
+			<li><a href="Seixas e a classificação de documentos_Final.html" style="color: #006bba; 				text-decoration:underline;">Seixas e a classificação de documentos</a></li>                
+                       
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="checklist_seguranca.html" target="_blank" class="btn-view">Acessar Página</a>
+                </div>
+            </div>
+
+            <div class="card" id="documentos">
+                <div class="card-header">Minuto LGPD</div>
+                <div class="card-body">
+                    <h3>Pílulas de Conhecimento</h3>
+                    <p>Pequenos "briefings" com dicas rápidas e práticas sobre LGPD. Podem ser disseminados por e-mail, via Teamns ou na intranet.</p>
+                    <ul>
+			<li><a href="LGPD em foco.html" style="color: #006bba; text-decoration: underline;">LGPD 			em foco</a></li>
+    			<li><a href="Essencial SEI Final.html" style="color: #006bba; text-decoration: 			underline;">Essencial SEI</a></li>
+			<li><a href="Checklist de segurança.html" style="color: #006bba; text-decoration: 			underline;">Checklist de segurança</a></li>                      
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="classificacao_sei.html" target="_blank" class="btn-view">Acessar Página</a>
+                </div>
+            </div>
+
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ANAC - Agência Nacional de Aviação Civil.</p>
+            <p>Campanha de Proteção de Dados Pessoais - Conformidade LGPD.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteção de Dados Pessoais no SEI - ANAC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-anac: #1A3A6B;
+            --azul-medio: #1565C0;
+            --roxo: #5E35B1;
+            --verde: #00897B;
+            --laranja: #E65100;
+            --vermelho: #B71C1C;
+            --bg-pastel: #f0f4f7; 
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #d1d9e6;
+            display: flex;
+            justify-content: center;
+            padding: 40px 10px;
+        }
+
+        .cartaz {
+            width: 800px;
+            background: var(--bg-pastel);
+            padding: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .header {
+            margin-bottom: 35px;
+            border-bottom: 3px solid var(--azul-anac);
+            padding-bottom: 25px;
+            text-align: center;
+        }
+
+        .header-title h1 {
+            font-size: 38px;
+            font-weight: 900;
+            color: var(--azul-anac);
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .alerta-topo {
+            background: rgba(26, 58, 107, 0.1);
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 45px;
+        }
+
+        .alerta-topo p {
+            color: var(--azul-anac);
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        /* Alinhamento dinâmico baseado no zigue-zague */
+        .item:nth-child(odd) { flex-direction: row; text-align: left; }
+        .item:nth-child(even) { flex-direction: row-reverse; text-align: right; }
+
+        .item-icon {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            z-index: 2;
+            flex-shrink: 0;
+        }
+
+        .item-content {
+            flex: 1;
+            padding: 10px 35px;
+        }
+
+        .item-content h3 {
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .item-content p {
+            font-size: 13px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .connector {
+            position: absolute;
+            height: 2px;
+            background: #d0d7de;
+            width: 45%;
+            top: 35px;
+            z-index: 1;
+        }
+        .item:nth-child(odd) .connector { left: 85px; }
+        .item:nth-child(even) .connector { right: 85px; }
+
+        .tema-coleta h3 { color: var(--azul-medio); }
+        .tema-acesso h3 { color: var(--roxo); }
+        .tema-anon h3 { color: var(--verde); }
+        .tema-nivel h3 { color: var(--azul-anac); }
+        .tema-ext h3 { color: var(--laranja); }
+        .tema-canais h3 { color: var(--roxo); }
+        .tema-pdf h3 { color: var(--vermelho); }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #cbd5e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer p { font-size: 11px; font-weight: 700; color: #666; }
+        .footer-logo { font-weight: 900; color: var(--azul-anac); font-size: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="cartaz">
+    <header class="header">
+        <div class="header-title">
+            <h1>Proteção de dados pessoais<br>no SEI</h1>
+        </div>
+    </header>
+
+    <div class="alerta-topo">
+        <p>Responsabilidade de cada um. Proteção de todos.</p>
+    </div>
+
+    <div class="item tema-coleta">
+        <div class="item-icon">📋</div>
+        <div class="connector"></div>
+        <div class="item-content">
+            <h3>Por que coletamos os dados</h3>
+            <p>Não colete dados ou documentos desnecessários ao processo. Lembre-se: “Serás sempre responsável pelos dados que coletará”. A transparência sobre a <strong>Finalidade</strong> da coleta é um dos pilares da LGPD.</p>
+        </div>
+    </div>
+
+    <div class="item tema-acesso">
+        <div class="item-icon">🚫</div>
+        <div class="connector"></div>
+        <div class="item-content">
+            <h3>Quando acessar?</h3>
+            <p>Consultar, imprimir ou compartilhar dados também é tratamento.<br> Acesse processos somente quando necessário para o trabalho.</p>
+        </div>
+    </div>
+
+    <div class="item tema-anon">
+        <div class="item-icon">🟣</div>
+        <div class="connector"></div>
+        <div class="item-content">
+            <h3>Anonimizar Dados Pessoais</h3>
+            <p>Em documentos internos com dados pessoais (CPF, endereço, saúde), use máscaras (***.456.789-**) ou tarjas que evitem <strong>exposição desnecessária</strong>.</p>
+        </div>
+    </div>
+
+    <div class="item tema-nivel">
+        <div class="item-icon">🔐</div>
+        <div class="connector"></div>
+        <div class="item-content">
+            <h3>Níveis de acesso</h3>
+            <p>Para que apenas as unidades por onde o processo tramitará possam acessar, classifique como <strong>"Restrito"</strong>. Se julgar que apenas  certos usuários poderão acessar, classifique como <strong>"Sigiloso"</strong>. E sempre registre a base legal para a restrição.</p>
+        </div>
+    </div>
+
+    <div class="item tema-ext">
+        <div class="item-icon">📤</div>
+        <div class="connector"></div>
+        <div class="item-content">
+            <h3>Compartilhamento Externo</h3>
+            <p>Compartilhe apenas os dados necessários e atenção às regras especificas da Portaria nº 14.167/ASTEC, de 21/03/24. O processo exige a formalização e atender à finalidades específicas de execução de políticas públicas e atribuição legal.</p>
+        </div>
+    </div>
+
+    <div class="item tema-canais">
+        <div class="item-icon">💬</div>
+        <div class="connector"></div>
+        <div class="item-content">
+            <h3>Canais Institucionais</h3>
+            <p>Internamente, não compartilhe dados pessoais de um processo por e-mail,<br> Teams ou planilhas. Além de mitigar riscos, impedirá a criação de novos repositórios.<br></p>
+        </div>
+    </div>
+
+    <div class="item tema-pdf">
+        <div class="item-icon">📎</div>
+        <div class="connector"></div>
+        <div class="item-content">
+            <h3>Cuidado com Anexos PDF</h3>
+            <p>Muitos vazamentos ocorrem em documentos digitalizados. Verifique se não há dados sensíveis visíveis antes de anexar ao SEI.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>AGÊNCIA NACIONAL DE AVIAÇÃO CIVIL · CAMPANHA #FIQUEESPERTO</p>
+        <div class="footer-logo">ANAC</div>
+    </footer>
+</div>
+
+</body>
+</html>

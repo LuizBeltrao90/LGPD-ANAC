@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proteção de Dados Pessoais na ANAC</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#07205e; --card-bg:#0d2d7a; --section-bg:#122f82; --border:#1e3d95;
+    --blue:#b8ceff; --blue-light:#eaffff; --white:#eaffff; --text:#b8ceff;
+    --muted:#8f9dba; --badge:#d05e44; --infobox-bg:#0a2570;
+  }
+  body { background:var(--bg); font-family:'Inter',sans-serif; min-height:100vh; display:flex; justify-content:center; padding:30px 16px; color:var(--white); }
+  .page { width:100%; max-width:760px; }
+  .card { background:var(--card-bg); border:1px solid var(--border); border-radius:14px; overflow:hidden; }
+  .header { background:linear-gradient(135deg,#081e60 0%,#0d2878 60%,#0e2a80 100%); padding:28px 32px 24px; border-bottom:1px solid var(--border); position:relative; }
+  .header-tags { position:absolute; top:16px; right:20px; }
+  .tag-dadosseguros { display:inline-block; border:1px solid #b8ceff; border-radius:4px; padding:2px 9px; font-size:9px; font-weight:700; color:#b8ceff; letter-spacing:.05em; }
+  .header h1 { font-size:28px; font-weight:800; line-height:1.15; margin-bottom:10px; margin-top:8px; }
+  .header h1 .accent { color:var(--blue); }
+  .header .subtitle { font-size:11px; color:var(--muted); line-height:1.55; max-width:540px; }
+  .content { padding:0 20px 20px; }
+  .section { background:var(--section-bg); border:1px solid var(--border); border-radius:10px; padding:18px 20px 16px; margin-top:14px; }
+  .section-title { font-size:14px; font-weight:700; color:var(--white); margin-bottom:13px; }
+  .item-list { display:flex; flex-direction:column; gap:8px; }
+  .item { display:flex; align-items:flex-start; gap:10px; font-size:11.5px; line-height:1.5; color:var(--text); }
+  .badge { flex-shrink:0; width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:#fff; margin-top:1px; background:var(--badge); }
+  .plane { flex-shrink:0; font-size:13px; line-height:1.5; margin-top:1px; }
+  .item strong { color:var(--white); font-weight:600; }
+  .info-box { background:var(--infobox-bg); border:1px solid var(--border); border-left:3px solid var(--blue); border-radius:5px; padding:9px 13px; font-size:11px; color:var(--text); line-height:1.5; margin-top:10px; }
+  .info-box .hl { color:var(--blue-light); font-weight:600; }
+  .arrow-list { display:flex; flex-direction:column; gap:7px; }
+  .arrow-item { display:flex; align-items:flex-start; gap:8px; font-size:11.5px; line-height:1.5; color:var(--text); }
+  .arrow { flex-shrink:0; color:var(--blue-light); font-size:15px; font-weight:700; line-height:1.3; }
+  .arrow-item strong { color:var(--white); font-weight:600; }
+  .footer { display:flex; justify-content:space-between; align-items:center; padding:16px 32px; border-top:1px solid var(--border); margin-top:14px; background:#091f62; }
+  .footer-quote { font-size:12px; font-style:italic; color:#eaffff; }
+  .footer-contact { font-size:10px; color:#8f9dba; }
+  .footer-contact a { color:#b8ceff; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="page"><div class="card">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-tags"><span class="tag-dadosseguros">#PROTEJA</span></div>
+    <h1>Proteção de Dados Pessoais <span class="accent">na ANAC</span></h1>
+    <p class="subtitle">Conheça as regras, princípios e estrutura que regem o tratamento de dados pessoais na ANAC, em conformidade com a LGPD — Lei nº 13.709/2018.</p>
+  </div>
+
+  <div class="content">
+
+    <!-- QUADRO 1 -->
+    <div class="section">
+      <p class="section-title">A LGPD e seus objetivos</p>
+      <div class="item-list">
+        <div class="item"><span class="plane">✈️</span><span>A <strong>Lei Geral de Proteção de Dados</strong> dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado.</span></div>
+        <div class="item"><span class="plane">✈️</span><span>Tem como objetivo <strong>proteger os direitos fundamentais</strong> de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.</span></div>
+        <div class="item"><span class="plane">✈️</span><span>A lei se aplica a <strong>todos que tenham contato com os dados</strong>.</span></div>
+      </div>
+    </div>
+
+    <!-- QUADRO 2 -->
+    <div class="section">
+      <p class="section-title">Abrangência da LGPD</p>
+      <div class="item-list">
+        <div class="item"><span class="plane">🧭</span><span>Dados relacionados à pessoa que esteja <strong>no Brasil, no momento da coleta</strong>.</span></div>
+        <div class="item"><span class="plane">🧭</span><span>Dados tratados <strong>dentro do território nacional</strong>.</span></div>
+        <div class="item"><span class="plane">🧭</span><span>Dados usados para <strong>fornecimento de bens ou serviços</strong>.</span></div>
+      </div>
+    </div>
+
+    <!-- QUADRO 3 -->
+    <div class="section">
+      <p class="section-title">Principais pilares do tratamento de dados</p>
+      <div class="item-list">
+        <div class="item"><span class="badge">1</span><span><strong>Finalidade</strong> — Dados serão tratados sempre com propósitos específicos e previamente informados ao titular.</span></div>
+        <div class="item"><span class="badge">2</span><span><strong>Adequação</strong> — O tratamento deve se manter adequado às finalidades informadas ao titular durante todo o processo.</span></div>
+        <div class="item"><span class="badge">3</span><span><strong>Necessidade</strong> — Colete, processe e armazene apenas o estritamente necessário em acordo com as finalidades informadas ao titular.</span></div>
+      </div>
+    </div>
+
+    <!-- QUADRO 4 -->
+    <div class="section">
+      <p class="section-title">Principais direitos dos titulares</p>
+      <div class="item-list">
+        <div class="item"><span class="badge">1</span><span>Obter a <strong>Confirmação</strong> da existência de tratamento e acesso aos seus dados.</span></div>
+        <div class="item"><span class="badge">2</span><span>Solicitar a <strong>Correção</strong> de dados incompletos, inexatos ou desatualizados.</span></div>
+        <div class="item"><span class="badge">3</span><span>Solicitar a <strong>Eliminação</strong>, anonimização ou bloqueio de dados desnecessários.</span></div>
+        <div class="item"><span class="badge">4</span><span>Obter <strong>Informações</strong> sobre compartilhamento com terceiros.</span></div>
+        <div class="item"><span class="badge">5</span><span><strong>Revogar</strong> o consentimento a qualquer momento.</span></div>
+      </div>
+    </div>
+
+    <!-- QUADRO 5 -->
+    <div class="section">
+      <p class="section-title">Quando é permitido tratar os dados?</p>
+      <div class="item-list">
+        <div class="item"><span class="plane">📑</span><span>Mediante <strong>consentimento</strong> do titular.</span></div>
+        <div class="item"><span class="plane">📑</span><span>Atendimento à <strong>obrigação legal</strong> ou regulatória.</span></div>
+        <div class="item"><span class="plane">📑</span><span>Para execução de <strong>políticas públicas</strong>.</span></div>
+        <div class="item"><span class="plane">📑</span><span>No exercício de <strong>direitos</strong> em processos judiciais ou administrativos.</span></div>
+        <div class="item"><span class="plane">📑</span><span>Para proteção da <strong>vida</strong> ou saúde do titular.</span></div>
+        <div class="item"><span class="plane">📑</span><span>Por <strong>interesse legítimo</strong> da ANAC, desde que não prevaleçam direitos fundamentais do titular.</span></div>
+      </div>
+      <div class="info-box" style="margin-top:12px;">
+        ⚠ <span class="hl"><strong>Dados sensíveis e de crianças/adolescentes</strong></span> exigem consentimento específico e destacado, com regras mais restritivas.
+      </div>
+    </div>
+
+    <!-- QUADRO 6 -->
+    <div class="section">
+      <p class="section-title">Prerrogativas para o compartilhamento de dados</p>
+      <div class="item-list">
+        <div class="item"><span class="plane">📡</span><span><strong>Consentimento específico</strong> do titular (observadas as hipóteses de dispensa).</span></div>
+        <div class="item"><span class="plane">📡</span><span>Compartilhar apenas <strong>dados necessários e justificados</strong>.</span></div>
+        <div class="item"><span class="plane">📡</span><span>Com <strong>finalidades específicas</strong> de execução de políticas públicas e atribuição legal.</span></div>
+        <div class="item"><span class="plane">📡</span><span>Processo deve ser realizado <strong>formalizado</strong> pelo responsável.</span></div>
+        <div class="item"><span class="plane">📡</span><span>Transferência internacional somente para países com <strong>proteção adequada</strong> certificada pela ANPD.</span></div>
+        <div class="item"><span class="plane">📡</span><span>Incidentes de segurança devem ser <strong>comunicados à ANPD e ao titular</strong> imediatamente.</span></div>
+      </div>
+      <div class="info-box" style="margin-top:12px;">
+        <strong>Fique atento!</strong> Todo compartilhamento de dados pessoais deve ser informado ao Encarregado (DPO).
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-quote">"Proteger dados é proteger pessoas."</div>
+    <div class="footer-contact">Dúvidas? Fale com a equipe LGPD: cgdin@anac.gov.br<a href="/cdn-cgi/l/email-protection#6e0b000d0f1c1c0b090f0a012e0f000f0d40090118400c1c"><span class="__cf_email__" data

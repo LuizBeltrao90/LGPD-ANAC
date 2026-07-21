@@ -211,7 +211,13 @@
     line-height: 1;
     z-index: 1;
   }
-
+/* Garante que a logo caiba no rodapé sem distorcer */
+.card-logo-anac {
+  max-height: 100%; /* A altura da logo nunca excederá a altura da barra do rodapé */
+  width: auto;       /* A largura se ajustará automaticamente para manter a proporção */
+  display: inline-block; /* Alinhamento correto com o texto se necessário */
+  vertical-align: middle; /* Alinhamento vertical centralizado */
+}
   /* ── VARIANTES DE CORES ────────────────────────────── */
 
   /* CARD 05 - AZUL */
@@ -264,7 +270,7 @@
       </div>
       <!-- <div class="card-number">05</div> -->
     </div>
-    <div class="bottombar"><span class="slogan">"Proteger dados é proteger pessoas."</span><span class="anac-badge">ANAC</span></div>
+    <div class="bottombar"><span class="slogan">"Proteger dados é proteger pessoas."</span> <img src="ANAC_mini.png" alt="Logo ANAC" class="card-logo-anac"> <!-- <-- NOVO CÓDIGO --> <!--<span class="anac-badge">ANAC</span>--> </div>
   </div>
 
   <div class="card card-06">

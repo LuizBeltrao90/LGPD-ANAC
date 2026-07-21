@@ -217,6 +217,9 @@
   width: auto;       /* A largura se ajustará automaticamente para manter a proporção */
   display: inline-block; /* Alinhamento correto com o texto se necessário */
   vertical-align: middle; /* Alinhamento vertical centralizado */
+  height: auto; /* Ajusta a altura automaticamente proporcional à largura (ou vice-versa se max-height dominar) */ 
+  max-width: 150px; /* Define uma largura máxima opcional para o globo não ficar enorme */ 
+  object-fit: contain; /* Mantém a proporção e se ajusta ao espaço */
 }
   /* ── VARIANTES DE CORES ────────────────────────────── */
 

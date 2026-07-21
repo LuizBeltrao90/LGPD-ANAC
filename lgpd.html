@@ -174,13 +174,21 @@
   .tip-text strong { font-weight: 700; color: #fff; }
 
   .bottombar {
-    padding: 14px 30px;
+    padding: 0 30px; /* Reduzimos o padding vertical para a barra ter altura fixa */
+    height: 52px;    /* Aumentamos um pouco a altura da barra para dar espaço à logo */
     z-index: 10;
     background: rgba(0,0,0,0.15);
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid rgba(255,255,255,0.08);
+    <!-- padding: 14px 30px;
+    z-index: 10;
+    background: rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.08); -->
   }
 
   .slogan {
@@ -217,7 +225,7 @@
   width: auto;       /* A largura se ajustará automaticamente para manter a proporção */
   display: inline-block; /* Alinhamento correto com o texto se necessário */
   vertical-align: middle; /* Alinhamento vertical centralizado */
-  height: auto; /* Ajusta a altura automaticamente proporcional à largura (ou vice-versa se max-height dominar) */ 
+  height: 38px; /* Ajusta a altura automaticamente proporcional à largura (ou vice-versa se max-height dominar) */ 
   max-width: 150px; /* Define uma largura máxima opcional para o globo não ficar enorme */ 
   object-fit: contain; /* Mantém a proporção e se ajusta ao espaço */
 }

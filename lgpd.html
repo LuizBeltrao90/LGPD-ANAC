@@ -173,22 +173,16 @@
 
   .tip-text strong { font-weight: 700; color: #fff; }
 
+  /* ── BOTTOMBAR AJUSTADA ────────────────────────────── */
   .bottombar {
-    padding: 0 30px; /* Reduzimos o padding vertical para a barra ter altura fixa */
-    height: 52px;    /* Aumentamos um pouco a altura da barra para dar espaço à logo */
+    padding: 0 30px;
+    height: 52px;
     z-index: 10;
     background: rgba(0,0,0,0.15);
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid rgba(255,255,255,0.08);
-    <!-- padding: 14px 30px;
-    z-index: 10;
-    background: rgba(0,0,0,0.15);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(255,255,255,0.08); -->
   }
 
   .slogan {
@@ -200,35 +194,14 @@
     letter-spacing: 0.5px;
   }
 
-  .anac-badge {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: 18px;
-    color: rgba(255,255,255,0.9);
-    letter-spacing: 1px;
+  /* ── LOGO AJUSTADA ─────────────────────────────────── */
+  .card-logo-anac {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    display: block;
   }
 
-  .card-number {
-    position: absolute;
-    bottom: -15px;
-    right: 25px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: 110px;
-    pointer-events: none;
-    line-height: 1;
-    z-index: 1;
-  }
-/* Garante que a logo caiba no rodapé sem distorcer */
-.card-logo-anac {
-  max-height: 100%; /* A altura da logo nunca excederá a altura da barra do rodapé */
-  width: auto;       /* A largura se ajustará automaticamente para manter a proporção */
-  display: inline-block; /* Alinhamento correto com o texto se necessário */
-  vertical-align: middle; /* Alinhamento vertical centralizado */
-  height: 38px; /* Ajusta a altura automaticamente proporcional à largura (ou vice-versa se max-height dominar) */ 
-  max-width: 150px; /* Define uma largura máxima opcional para o globo não ficar enorme */ 
-  object-fit: contain; /* Mantém a proporção e se ajusta ao espaço */
-}
   /* ── VARIANTES DE CORES ────────────────────────────── */
 
   /* CARD 05 - AZUL */
@@ -236,28 +209,24 @@
   .card-05::before { background: radial-gradient(ellipse at 85% 15%, rgba(100,210,255,0.15) 0%, transparent 60%); }
   .card-05 .icon-wrap { background: rgba(30,190,240,0.15); border: 1px solid rgba(30,190,240,0.3); }
   .card-05 .tip-dot { background: rgba(30,190,240,0.85); box-shadow: 0 4px 10px rgba(30,190,240,0.3); }
-  .card-05 .card-number { color: rgba(100,210,255,0.035); }
 
   /* CARD 06 - ROXO */
   .card-06 { background: linear-gradient(135deg, #2e1a47 0%, #4a2b73 40%, #7c3aed 100%); }
   .card-06::before { background: radial-gradient(ellipse at 85% 15%, rgba(167,139,250,0.15) 0%, transparent 60%); }
   .card-06 .icon-wrap { background: rgba(167,139,250,0.15); border: 1px solid rgba(167,139,250,0.3); }
   .card-06 .tip-dot { background: rgba(124,58,237,0.85); box-shadow: 0 4px 10px rgba(124,58,237,0.3); }
-  .card-06 .card-number { color: rgba(167,139,250,0.035); }
 
   /* CARD 07 - DOURADO */
   .card-07 { background: linear-gradient(135deg, #3d2b0a 0%, #614510 40%, #d97706 100%); }
   .card-07::before { background: radial-gradient(ellipse at 85% 15%, rgba(251,191,36,0.15) 0%, transparent 60%); }
   .card-07 .icon-wrap { background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)); font-size: 34px; }
   .card-07 .tip-dot { background: #fbbf24; color: #3d2b0a; box-shadow: 0 4px 10px rgba(251,191,36,0.3); }
-  .card-07 .card-number { color: rgba(255,255,255,0.04); }
 
   /* CARD 08 - VERMELHO */
   .card-08 { background: linear-gradient(135deg, #4d1010 0%, #7d1a1a 40%, #c14d2a 100%); }
   .card-08::before { background: radial-gradient(ellipse at 85% 15%, rgba(255,160,122,0.15) 0%, transparent 60%); }
   .card-08 .icon-wrap { background: rgba(255,160,122,0.15); border: 1px solid rgba(255,160,122,0.3); filter: drop-shadow(0 0 8px rgba(255,160,122,0.6)); }
   .card-08 .tip-dot { background: rgba(255,160,122,0.85); box-shadow: 0 4px 10px rgba(255,160,122,0.3); }
-  .card-08 .card-number { color: rgba(255,160,122,0.035); }
 
 </style>
 </head>
@@ -279,9 +248,11 @@
         <div class="tip-item"><div class="tip-dot">3</div><div class="tip-text"><strong>Incidente? Comunique</strong> à equipe responsável pela LGPD na Anac: encarregado.lgpd@anac.gov.br.</div></div>
         <div class="tip-item"><div class="tip-dot">4</div><div class="tip-text"><strong>Sigilo é permanente:</strong> a obrigação de proteger dados continua mesmo após o fim do vínculo.</div></div>
       </div>
-      <!-- <div class="card-number">05</div> -->
     </div>
-    <div class="bottombar"><span class="slogan">"Proteger dados é proteger pessoas."</span> <img src="ANAC_mini.png" alt="Logo ANAC" style="height: 25px; max-height: 100%; width: auto; object-fit: contain;"> <!-- <-- NOVO CÓDIGO --> <!--<span class="anac-badge">ANAC</span>--> </div>
+    <div class="bottombar">
+      <span class="slogan">"Proteger dados é proteger pessoas."</span>
+      <img src="ANAC_mini.png" alt="Logo ANAC" class="card-logo-anac">
+    </div>
   </div>
 
   <div class="card card-06">
@@ -300,9 +271,11 @@
         <div class="tip-item"><div class="tip-dot">3</div><div class="tip-text"><strong>Dados sensíveis:</strong> redobre o cuidado sobre saúde, origem racial, religião, vida sexual ou qualquer dado que possa causar discriminação ao titular.</div></div>
         <div class="tip-item"><div class="tip-dot">4</div><div class="tip-text"><strong>Exclusão:</strong> se o dado não tem mais utilidade legal ou administrativa, ele não deve ser guardado.</div></div>
       </div>
-      <!-- <div class="card-number">06</div> -->
     </div>
-    <div class="bottombar"><span class="slogan">"Proteger dados é proteger pessoas."</span><span class="anac-badge">ANAC</span></div>
+    <div class="bottombar">
+      <span class="slogan">"Proteger dados é proteger pessoas."</span>
+      <img src="ANAC_mini.png" alt="Logo ANAC" class="card-logo-anac">
+    </div>
   </div>
 
   <div class="card card-07">
@@ -321,9 +294,11 @@
         <div class="tip-item"><div class="tip-dot">3</div><div class="tip-text"><strong>Transparência:</strong> explique de forma simples como a Agência protege dados pessoais dos cidadãos.</div></div>
         <div class="tip-item"><div class="tip-dot">4</div><div class="tip-text"><strong>Canal Oficial:</strong> em caso de dúvidas, entre em contato com a equipe LGPD da Anac: <strong>cgdin@anac.gov.br</strong></div></div>
       </div>
-      <!-- <div class="card-number">07</div> -->
     </div>
-    <div class="bottombar"><span class="slogan">"Proteger dados é proteger pessoas."</span><span class="anac-badge">ANAC</span></div>
+    <div class="bottombar">
+      <span class="slogan">"Proteger dados é proteger pessoas."</span>
+      <img src="ANAC_mini.png" alt="Logo ANAC" class="card-logo-anac">
+    </div>
   </div>
 
   <div class="card card-08">
@@ -342,9 +317,11 @@
         <div class="tip-item"><div class="tip-dot">3</div><div class="tip-text"><strong>Mídias Antigas:</strong> pendrives ou CDs antigos devem ser destruídos fisicamente ou formatados com segurança.</div></div>
         <div class="tip-item"><div class="tip-dot">4</div><div class="tip-text"><strong>memória de Impressora:</strong> não deixe documentos esquecidos na bandeja da impressora compartilhada.</div></div>
       </div>
-      <!-- <div class="card-number">08</div> -->
     </div>
-    <div class="bottombar"><span class="slogan">"Sua responsabilidade com os dados termina apenas após o descarte seguro."</span><span class="anac-badge">ANAC</span></div>
+    <div class="bottombar">
+      <span class="slogan">"Sua responsabilidade com os dados termina apenas após o descarte seguro."</span>
+      <img src="ANAC_mini.png" alt="Logo ANAC" class="card-logo-anac">
+    </div>
   </div>
 
 </body>
